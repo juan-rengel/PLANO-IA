@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Plano de Estudos IA – 3 Meses (Mobile)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    :root {
+      --bg-body: #020617;
+      --bg-card: #020617;
+      --bg-card-soft: #02091f;
+      --accent: #6262f3;
+      --accent-soft: rgba(53, 55, 179, 0.692);
+      --accent-strong: #cdccd6;
+      --text-main: #e5e7eb;
+      --text-soft: #9ca3af;
+      --border-soft: #1f2937;
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --shadow-soft: 0 18px 45px rgba(15,23,42,0.88);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top, #1f2937 0, #020617 45%, #000 100%);
+      color: var(--text-main);
+      padding: 18px 10px 32px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .wrapper {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .container {
+      background:
+        radial-gradient(circle at top left, rgba(96, 165, 250, 0.26), transparent 45%),
+        radial-gradient(circle at bottom right, rgba(129,140,248,0.22), transparent 55%),
+        var(--bg-card);
+      border-radius: var(--radius-lg);
+      padding: 18px 14px 22px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(148,163,184,0.28);
+    }
+
+    header {
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(148,163,184,0.35);
+    }
+
+    h1 {
+      margin: 0 0 4px;
+      font-size: 1.35rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #f9fafb;
+    }
+
+    .subtitle {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      max-width: 640px;
+      line-height: 1.4;
+    }
+
+    .tagline {
+      margin-top: 10px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.836);
+      border: 1px solid rgba(148, 163, 184, 0.589);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      color: #e5e7eb;
+    }
+
+    .tagline span.dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 4px rgba(34,197,94,0.35);
+      flex-shrink: 0;
+    }
+
+    .legend {
+      margin: 10px 0 2px;
+      font-size: 0.78rem;
+      color: var(--text-soft);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .legend-pill {
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.45);
+      background: rgba(15,23,42,0.9);
+      font-size: 0.72rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    .legend-pill span.icon {
+      font-size: 0.9rem;
+    }
+
+    .badge-mes {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 11px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.45);
+      background: rgba(15,23,42,0.92);
+      font-size: 0.8rem;
+      margin: 12px 0 6px;
+    }
+
+    .badge-mes span.icon {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at 30% 0, #22d3ee, #4f46e5);
+      font-size: 1.18rem;
+      flex-shrink: 0;
+    }
+
+    .badge-mes strong {
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: 0.72rem;
+      color: #e5e7eb;
+      display: block;
+    }
+
+    .badge-mes span.desc {
+      font-size: 0.78rem;
+      color: var(--text-soft);
+    }
+
+    /* Accordions por semana */
+    details.semana {
+      border-radius: var(--radius-md);
+      margin: 8px 0 10px;
+      border: 1px solid var(--border-soft);
+      background: rgba(15,23,42,0.96);
+      overflow: hidden;
+      transition: border-color 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+    }
+
+    details.semana summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 13px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.98rem;
+      font-weight: 500;
+      background: linear-gradient(90deg, rgba(15,23,42,1), rgba(55,65,81,0.55));
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    details.semana[open] {
+      border-color: rgba(129,140,248,0.9);
+      box-shadow: 0 0 0 1px rgba(129,140,248,0.4);
+    }
+
+    details.semana[open] summary {
+      background: linear-gradient(90deg, rgba(129,140,248,0.32), rgba(56,189,248,0.14));
+    }
+
+    details.semana summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .summary-left {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      max-width: 86%;
+    }
+
+    .summary-pill {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      padding: 3px 7px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.7);
+      color: var(--text-soft);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .summary-title {
+      font-size: 0.9rem;
+      line-height: 1.3;
+    }
+
+    .chevron {
+      font-size: 1rem;
+      transition: transform 0.22s ease;
+      flex-shrink: 0;
+      margin-left: 6px;
+    }
+
+    details.semana[open] .chevron {
+      transform: rotate(90deg);
+    }
+
+    .semana-body {
+      padding: 10px 11px 12px;
+      font-size: 0.9rem;
+      background:
+        radial-gradient(circle at top left, rgba(4, 1, 63, 0.603), transparent 55%),
+        rgba(15,23,42,0.98);
+    }
+
+    .semana-body h4 {
+      margin: 6px 0 3px;
+      font-size: 1rem;
+      color: #e5e7eb;
+    }
+
+    .semana-body p {
+      margin: 3px 0 6px;
+      color: var(--text-soft);
+      line-height: 1.5;
+    }
+
+    .semana-body ul,
+    .semana-body ol {
+      margin: 3px 0 7px 18px;
+      padding-left: 8px;
+      color: var(--text-soft);
+    }
+
+    .semana-body li {
+      margin-bottom: 3px;
+    }
+
+    .dia-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.95);
+      border: 1px solid rgba(148,163,184,0.65);
+      font-size: 0.8rem;
+      margin-top: 7px;
+      margin-bottom: 4px;
+    }
+
+    .dia-label::before {
+      content: "▶";
+      font-size: 0.7rem;
+      color: rgba(129,140,248,0.9);
+    }
+
+    .resumo-topico {
+      display: inline-block;
+      font-size: 0.8rem;
+      color: #e5e7eb;
+      background: rgba(22,163,74,0.18);
+      border: 1px solid rgba(34,197,94,0.7);
+      padding: 4px 8px;
+      border-radius: 999px;
+      margin: 4px 0 8px;
+    }
+
+    .note {
+      font-size: 0.8rem;
+      color: var(--text-soft);
+      border-left: 3px solid rgba(148,163,184,0.9);
+      padding-left: 8px;
+      margin: 4px 0 8px;
+    }
+
+    pre {
+      font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
+      font-size: 0.76rem;
+      background: rgba(15,23,42,1);
+      color: #e5e7eb;
+      border-radius: 10px;
+      padding: 7px 9px;
+      border: 1px solid rgba(148,163,184,0.45);
+      overflow-x: auto;
+      margin: 4px 0 9px;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    code {
+      font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
+      font-size: 0.75rem;
+      background: rgba(15,23,42,1);
+      border-radius: 4px;
+      padding: 2px 4px;
+      border: 1px solid rgba(148,163,184,0.5);
+    }
+
+    @media (min-width: 768px) {
+      body {
+        padding: 26px 20px 40px;
+      }
+      .container {
+        padding: 22px 18px 26px;
+      }
+      h1 {
+        font-size: 1.55rem;
+      }
+      .summary-title {
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 14px 8px 26px;
+      }
+      .container {
+        padding: 15px 11px 20px;
+        border-radius: 14px;
+      }
+      h1 {
+        font-size: 1.25rem;
+      }
+      .tagline {
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
+        padding-inline: 10px;
+      }
+      .summary-title {
+        font-size: 0.86rem;
+      }
+      .semana-body {
+        font-size: 0.86rem;
+      }
+      pre {
+        font-size: 0.72rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <header>
+        <h1>Plano de Estudos de IA em 3 Meses</h1>
+        <div class="subtitle">
+          Roteiro completo para sair do básico de IA generativa até a criação de produtos reais com automação,
+          chatbots e portfólio profissional. Perfeito para estudar direto do celular.
+        </div>
+        <div class="tagline">
+          <span class="dot"></span>
+          <span>60 DIAS · IA + AUTOMAÇÃO · FOCO EM NEGÓCIOS REAIS</span>
+        </div>
+        <div class="legend">
+          <span class="legend-pill"><span class="icon">🧠</span>Fundamentos &amp; Prompts</span>
+          <span class="legend-pill"><span class="icon">🤖</span>Automação &amp; Chatbots</span>
+          <span class="legend-pill"><span class="icon">💼</span>Produtos &amp; Portfólio</span>
+        </div>
+      </header>
+
+      <!-- =============== MÊS 1 =============== -->
+      <div class="badge-mes">
+        <span class="icon">🟦</span>
+        <div>
+          <strong>MÊS 1 — FUNDAMENTOS + PROMPT ENGINEERING</strong>
+          <span class="desc">
+            Entender como funcionam as IAs modernas e dominar prompts profissionais.
+          </span>
+        </div>
+      </div>
+
+      <!-- Semana 1 -->
+      <details class="semana">
+        <summary>
+          <div class="summary-left">
+            <span class="summary-pill">SEMANA 1</span>
+            <span class="summary-title">Entendendo IA generativa + Prompts básicos</span>
+          </div>
+          <span class="chevron">▶</span>
+        </summary>
+        <div class="semana-body">
+          <p class="resumo-topico">
+            Objetivo: entender o que é um LLM e criar seus primeiros prompts sérios.
+          </p>
+
+          <div class="dia-label">📅 Dia 1 – Visão geral da IA de 2025</div>
+          <h4>O que é um modelo de linguagem (LLM)?</h4>
+          <p>
+            Um LLM (<em>Large Language Model</em>) é uma inteligência artificial treinada com uma quantidade
+            gigantesca de textos (livros, sites, artigos, códigos, conversas) para aprender padrões de linguagem.
+          </p>
+          <p>Ele é muito bom em:</p>
+          <ul>
+            <li>Prever qual palavra vem em seguida em uma frase.</li>
+            <li>Entender instruções em linguagem natural (português, inglês etc.).</li>
+            <li>Gerar textos coerentes, escrever código, resumir, traduzir e responder perguntas.</li>
+          </ul>
+          <p>
+            Nos bastidores, tudo é número (vetores, matrizes). Na prática, você escreve sua pergunta normalmente
+            e o modelo responde como se fosse uma conversa.
+          </p>
+
+          <h4>Diferença entre GPT-5.1, Gemini 3 e Claude Opus 4.5</h4>
+          <ul>
+            <li>
+              <strong>GPT-5.1 (ChatGPT – OpenAI)</strong><br />
+              Excelente para uso geral: estudo, programação, explicações passo a passo, criação de conteúdo e
+              integração com ferramentas.
+            </li>
+            <li>
+              <strong>Gemini 3 (Google)</strong><br />
+              Muito bom quando integrado com Google Docs, Planilhas e outros serviços Google, além de uso com
+              informações da web.
+            </li>
+            <li>
+              <strong>Claude Opus 4.5 (Anthropic)</strong><br />
+              Forte para textos longos, leitura de documentos grandes e respostas estruturadas com foco em segurança.
+            </li>
+          </ul>
+
+          <h4>Pergunta: “Explique como você funciona em linguagem simples.”</h4>
+          <pre>
+“Eu sou uma inteligência artificial treinada para entender e gerar textos.
+Aprendi lendo milhões de exemplos de conversas, artigos, livros e códigos.
+Quando você me envia uma mensagem, eu analiso o que você escreveu, comparo com
+padrões que já vi no treinamento e gero uma resposta palavra por palavra,
+tentando ser útil e coerente.
+
+Eu não tenho sentimentos nem consciência. Eu trabalho com padrões de linguagem.
+Quanto mais clara for a sua pergunta, mais fácil é te dar uma resposta boa.”</pre>
+
+          <h4>Pergunta: “Me dê 3 exemplos de uso na área de negócios.”</h4>
+          <ol>
+            <li>
+              <strong>Atendimento ao cliente:</strong> criação de respostas padrão, chatbots para dúvidas
+              frequentes, atendimento 24h via WhatsApp, site ou redes sociais.
+            </li>
+            <li>
+              <strong>Vendas e marketing:</strong> criação de textos para anúncios, descrições de produtos,
+              e-mails de campanha, roteiros de vídeo e mensagens persuasivas.
+            </li>
+            <li>
+              <strong>Gestão e organização:</strong> resumo de relatórios, geração de listas de tarefas,
+              organização de ideias e sugestões para melhorar processos internos.
+            </li>
+          </ol>
+
+          <div class="dia-label">📅 Dia 2 – Anatomia de um bom prompt</div>
+          <p>
+            Um bom prompt é construído com 4 blocos: <strong>ROLE</strong>, <strong>GOAL</strong>,
+            <strong>RULES</strong> e <strong>CONTEXT</strong>.
+          </p>
+
+          <h4>ROLE – Quem a IA deve ser</h4>
+          <pre>“Você é um atendente de supermercado especializado em ajudar clientes
+a encontrar produtos, promoções e sugestões para receitas simples.”</pre>
+
+          <h4>GOAL – Qual o objetivo</h4>
+          <pre>“Seu objetivo é ajudar o cliente a escolher os melhores produtos de acordo
+com o orçamento e com o que ele quer cozinhar.”</pre>
+
+          <h4>RULES – Regras</h4>
+          <pre>“Responda em português do Brasil, com frases curtas, educadas e claras.
+Se não souber a resposta, admita e sugira outra solução.”</pre>
+
+          <h4>CONTEXT – Contexto extra</h4>
+          <pre>“O mercado é de bairro, vende alimentos, bebidas, itens de limpeza, tem açougue,
+padaria e hortifrúti. O cliente quer praticidade e preço justo.”</pre>
+
+          <h4>Exemplos prontos de prompts</h4>
+          <p><strong>1) Prompt para atendimento ao cliente</strong></p>
+          <pre>ROLE: Você é um atendente de supermercado especialista em orientar clientes.
+GOAL: Ajudar o cliente a encontrar produtos, promoções e opções econômicas.
+RULES: Responda em português do Brasil, em tom amigável, com frases curtas.
+CONTEXT: O cliente manda mensagens pelo WhatsApp perguntando sobre produtos,
+preços e sugestões para o almoço ou jantar.</pre>
+
+          <p><strong>2) Prompt para vendas</strong></p>
+          <pre>ROLE: Você é um vendedor experiente de cursos online.
+GOAL: Mostrar os benefícios do curso e ajudar o cliente a decidir se faz sentido comprar.
+RULES: Seja persuasivo, honesto e use exemplos práticos de resultado.
+CONTEXT: O curso é sobre automação com IA para pequenos negócios, focado em WhatsApp
+e relatórios automáticos em planilhas.</pre>
+
+          <p><strong>3) Prompt para explicação técnica simples</strong></p>
+          <pre>ROLE: Você é um professor de tecnologia explicando para iniciantes.
+GOAL: Explicar o que é uma API de forma simples, com exemplos do dia a dia.
+RULES: Use linguagem simples, sem termos difíceis, em até 3 parágrafos.
+CONTEXT: A pessoa nunca programou, mas usa internet, apps e WhatsApp todos os dias.</pre>
+
+          <div class="dia-label">📅 Dia 3 – Testando e ajustando</div>
+          <p>
+            Agora você testa como pequenas mudanças no prompt mudam a resposta.
+          </p>
+
+          <p><strong>Prompt base:</strong></p>
+          <pre>Explique o que é um LLM para alguém que trabalha em supermercado
+e não entende nada de tecnologia.</pre>
+
+          <p><strong>Versão formal:</strong></p>
+          <pre>Explique o que é um LLM para um gerente de supermercado, em tom formal,
+com exemplos do dia a dia, em até 2 parágrafos.</pre>
+
+          <p><strong>Versão simples e curta:</strong></p>
+          <pre>Explique o que é um LLM em 3 frases simples, como se estivesse explicando
+para um amigo.</pre>
+
+          <p class="note">
+            Faça o teste na prática: rode cada versão na IA e observe as diferenças de
+            tom, tamanho e clareza. Isso vai treinar seu olhar de engenheiro de prompt.
+          </p>
+
+          <div class="dia-label">📅 Dia 4 – Prompts para o dia a dia</div>
+          <h4>Resumir um texto grande</h4>
+          <pre>Resuma o texto abaixo em um parágrafo, destacando os principais pontos
+e mantendo o sentido original. Use linguagem simples e objetiva.
+
+[TEXTO AQUI]</pre>
+
+          <h4>Corrigir português</h4>
+          <pre>Revise o texto abaixo, corrigindo erros de português, acentuação e concordância,
+mas mantendo meu jeito de falar. No final, mostre apenas a versão corrigida.
+
+[TEXTO AQUI]</pre>
+
+          <h4>Transformar áudio em lista de tarefas</h4>
+          <pre>Pegue o texto abaixo, que é uma transcrição de áudio bagunçada, e transforme
+em uma lista de tarefas organizada, com tópicos e ações claras.
+
+[TEXTO AQUI]</pre>
+
+          <div class="dia-label">📅 Dia 5 – Mini-projeto: Secretário pessoal de IA</div>
+          <p>
+            Crie um prompt para transformar a IA no seu “secretário pessoal”.
+          </p>
+          <pre>Você é meu secretário pessoal de IA.
+
+ROLE:
+Você organiza meu dia e me ajuda a focar no que é mais importante.
+
+GOAL:
+Transformar tudo o que eu escrever em uma lista de tarefas organizada,
+sugerindo prioridades.
+
+RULES:
+- Responda sempre em português do Brasil.
+- Organize as tarefas em: "Alta prioridade", "Média prioridade" e "Baixa prioridade".
+- No final, sempre pergunte: "Por qual você quer começar?".
+
+CONTEXT:
+Vou mandar mensagens soltas sobre o que preciso fazer hoje (trabalho, estudos,
+casa, família). Quero que você interprete, agrupe tarefas parecidas e me ajude
+a decidir o que fazer primeiro.</pre>
+
+          <p class="note">
+            Dica: salve esse prompt em uma nota do celular e use todos os dias de manhã.
+          </p>
+        </div>
+      </details>
+
+      <!-- Semana 2 -->
+      <details class="semana">
+        <summary>
+          <div class="summary-left">
+            <span class="summary-pill">SEMANA 2</span>
+            <span class="summary-title">Prompt Engineering intermediário</span>
+          </div>
+          <span class="chevron">▶</span>
+        </summary>
+        <div class="semana-body">
+          <p class="resumo-topico">
+            Objetivo: sair do “prompt solto” e usar técnicas de engenheiro de prompt.
+          </p>
+
+          <div class="dia-label">📅 Dias 6–7 – Técnicas principais</div>
+          <h4>Few-shot prompting</h4>
+          <p>
+            Em vez de apenas explicar o que você quer, você mostra exemplos de entrada e saída.
+          </p>
+          <pre>Quero que você atenda clientes de mercado como nos exemplos abaixo.
+
+Exemplo 1 – Entrada:
+"Vocês têm arroz integral em promoção?"
+
+Exemplo 1 – Saída:
+"Temos sim! Hoje o arroz integral 1kg da marca X está em promoção por R$ 8,90.
+Posso te sugerir também o feijão preto que está em oferta e combina bem com ele."
+
+Exemplo 2 – Entrada:
+"Quais são os horários do açougue?"
+
+Exemplo 2 – Saída:
+"O açougue funciona de segunda a sábado das 8h às 19h,
+e aos domingos das 8h às 13h."
+
+Agora siga o mesmo padrão para responder esta mensagem do cliente:
+
+[MENSAGEM DO CLIENTE AQUI]</pre>
+
+          <h4>Chain-of-Thought (passo a passo)</h4>
+          <pre>Quero que você resolva o problema abaixo mostrando o raciocínio passo a passo.
+Depois, no final, dê apenas a resposta final em uma frase separada.
+
+[PROBLEMA AQUI]</pre>
+
+          <h4>Reescrita iterativa</h4>
+          <pre>1) Reescreva o texto abaixo deixando mais curto.
+2) Depois, reescreva deixando mais simples de entender.
+3) Depois, reescreva com foco em vendas.
+
+[TEXTO AQUI]</pre>
+
+          <div class="dia-label">📅 Dias 8–9 – Personas e estilo fixo</div>
+          <h4>Persona 1 – Atendente educado</h4>
+          <pre>Você é um atendente educado de um supermercado de bairro.
+
+TOM:
+- Educado, paciente, calmo.
+- Evita gírias e palavras agressivas.
+
+PODE RESPONDER:
+- Dúvidas sobre produtos, horários, formas de pagamento e localização.
+
+NÃO PODE RESPONDER:
+- Opiniões políticas, assuntos fora do contexto do mercado.
+
+DESPEDIDA PADRÃO:
+"Sempre que precisar, estou à disposição. Tenha um ótimo dia!"</pre>
+
+          <h4>Persona 2 – Vendedor empolgado</h4>
+          <pre>Você é um vendedor empolgado de cursos online.
+
+TOM:
+- Entusiasmado, motivador e positivo.
+- Usa expressões como "isso pode mudar o seu jogo" e "vamos pra cima".
+
+OBJETIVO:
+- Mostrar o valor do curso de automação com IA para pequenos negócios.
+
+DESPEDIDA:
+"Se tiver qualquer dúvida, me chama! Vai ser um prazer te ajudar
+a dar o próximo passo com IA."</pre>
+
+          <h4>Persona 3 – Consultor sério e direto</h4>
+          <pre>Você é um consultor sério e direto, especializado em eficiência de negócios.
+
+TOM:
+- Profissional, focado em resultados.
+- Sem rodeios, direto ao ponto.
+
+OBJETIVO:
+- Analisar processos e sugerir melhorias objetivas.
+
+DESPEDIDA:
+"Se quiser, posso sugerir um plano prático em etapas para implementar isso."</pre>
+
+          <div class="dia-label">📅 Dia 10 – Mini-projeto: Atendente de Mercado</div>
+          <pre>Você é um atendente virtual de um supermercado de bairro.
+
+ROLE:
+Atender clientes com dúvidas sobre produtos, promoções e horários de funcionamento.
+
+GOAL:
+Ajudar o cliente rapidamente, sugerindo produtos e combinando itens quando fizer sentido
+(ex.: arroz + feijão, macarrão + molho, carne + temperos).
+
+RULES:
+- Responda sempre em português do Brasil.
+- Use frases curtas e educadas.
+- Se a pergunta não tiver relação com o mercado, diga que não pode responder
+  e convide o cliente a perguntar sobre produtos ou serviços da loja.
+- Quando fizer sentido, sugira mais 1 ou 2 produtos relacionados.
+
+CONTEXT:
+O mercado vende alimentos, bebidas, itens de limpeza e higiene, tem açougue, padaria
+e hortifrúti. O público é de bairro, com famílias que procuram praticidade e preço justo.</pre>
+        </div>
+      </details>
+
+      <!-- Semana 3 -->
+      <details class="semana">
+        <summary>
+          <div class="summary-left">
+            <span class="summary-pill">SEMANA 3</span>
+            <span class="summary-title">Fluxos de conversa e cadeias de prompts</span>
+          </div>
+          <span class="chevron">▶</span>
+        </summary>
+        <div class="semana-body">
+          <p class="resumo-topico">
+            Objetivo: pensar como sistema, não apenas como frase isolada.
+          </p>
+
+          <div class="dia-label">📅 Dias 11–12 – Desenhando fluxos</div>
+          <h4>Exemplo de fluxo (salão de beleza)</h4>
+          <pre>1) Cliente manda mensagem.
+2) IA identifica a intenção:
+   - preço
+   - horário
+   - agendamento
+   - outra dúvida
+
+3) Se for preço → mandar tabela ou faixa de valores.
+4) Se for horário → informar dias e horários disponíveis.
+5) Se for agendamento → pedir nome, serviço, dia e horário.
+6) Confirmar o agendamento com mensagem educada.</pre>
+
+          <div class="dia-label">📅 Dia 13 – Cadeias de prompts</div>
+          <p>
+            Você divide o processo em 3 prompts:
+          </p>
+          <p><strong>Prompt 1 – Entender o pedido</strong></p>
+          <pre>Leia a mensagem abaixo e identifique:
+
+- Qual é a intenção principal do usuário?
+- Quais informações importantes ele já forneceu?
+- O que ainda falta perguntar?
+
+Responda em JSON:
+
+{
+  "intencao": "...",
+  "dados_fornecidos": ["..."],
+  "dados_faltando": ["..."]
+}
+
+[MENSAGEM AQUI]</pre>
+
+          <p><strong>Prompt 2 – Decidir ação</strong></p>
+          <pre>Com base nos dados abaixo, decida qual ação tomar
+e se é necessário pedir mais informações.
+
+[DADOS EM JSON AQUI]</pre>
+
+          <p><strong>Prompt 3 – Resposta final para o usuário</strong></p>
+          <pre>Monte uma resposta educada para o usuário usando:
+
+- intencao
+- acao_sugerida
+- dados_fornecidos
+
+A resposta deve:
+- Ser em português do Brasil.
+- Ter no máximo 2 parágrafos.
+- Fazer no máximo 2 perguntas se ainda faltar informação.</pre>
+
+          <div class="dia-label">📅 Dias 14–15 – Mini-projeto</div>
+          <p>
+            Escolha um nicho (mercado, salão, clínica, loja online, restaurante) e:
+          </p>
+          <ul>
+            <li>Defina 3 tipos de clientes (ex.: novo, recorrente, reclamando).</li>
+            <li>Desenhe como a IA deve responder cada um.</li>
+            <li>Guarde esse fluxo: ele será base para o chatbot do Mês 2.</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Semana 4 -->
+      <details class="semana">
+        <summary>
+          <div class="summary-left">
+            <span class="summary-pill">SEMANA 4</span>
+            <span class="summary-title">APIs, JSON e pensamento de automação</span>
+          </div>
+          <span class="chevron">▶</span>
+        </summary>
+        <div class="semana-body">
+          <p class="resumo-topico">
+            Objetivo: entender a base técnica mínima para automação (n8n, Zapier etc.).
+          </p>
+
+          <div class="dia-label">📅 Dias 16–17 – JSON</div>
+          <h4>O que é JSON?</h4>
+          <p>
+            JSON é um formato simples de dados, muito usado para comunicação entre sistemas.
+            Parece um conjunto de chaves e valores:
+          </p>
+          <pre>{
+  "nome": "Maria",
+  "idade": 32,
+  "cliente_vip": true,
+  "itens": ["arroz", "feijão", "óleo"]
+}</pre>
+
+          <h4>Exercício – Lista em JSON</h4>
+          <p>Lista de compras:</p>
+          <ul>
+            <li>Arroz 5kg</li>
+            <li>Feijão carioca 1kg</li>
+            <li>Óleo de soja 900ml</li>
+          </ul>
+          <pre>[
+  {
+    "produto": "Arroz",
+    "tipo": "5kg",
+    "categoria": "Alimentos"
+  },
+  {
+    "produto": "Feijão carioca",
+    "tipo": "1kg",
+    "categoria": "Alimentos"
+  },
+  {
+    "produto": "Óleo de soja",
+    "tipo": "900ml",
+    "categoria": "Alimentos"
+  }
+]</pre>
+
+          <div class="dia-label">📅 Dias 18–19 – APIs</div>
+          <h4>API explicada de forma simples</h4>
+          <p>
+            API é como um garçom de restaurante:
+          </p>
+          <ul>
+            <li>Você faz o pedido (requisição).</li>
+            <li>A cozinha prepara (servidor).</li>
+            <li>O garçom traz o prato (resposta).</li>
+          </ul>
+          <p>
+            <strong>GET</strong> pede informações. <strong>POST</strong> envia/cria informações.
+            <strong>Endpoint</strong> é o endereço da API. <strong>Chave de API</strong> é a “senha”
+            que prova que você tem permissão de usar.
+          </p>
+
+          <div class="dia-label">📅 Dia 20 – Padrão de resposta em JSON</div>
+          <pre>Sempre responda no seguinte formato JSON:
+
+{
+  "intencao": "...",
+  "tipo_cliente": "...",
+  "acao_sugerida": "...",
+  "resposta_final": "..."
+}
+
+Exemplo:
+- intencao: "pergunta sobre preço"
+- tipo_cliente: "novo"
+- acao_sugerida: "explicar tabela simples de preços e convidar para visitar a loja"
+- resposta_final: texto final para enviar ao cliente.</pre>
+        </div>
+      </details>
+
+      <!-- =============== MÊS 2 =============== -->
+      <div class="badge-mes">
+        <span class="icon">🟩</span>
+        <div>
+          <strong>MÊS 2 — AUTOMAÇÃO INTELIGENTE + CHATBOTS</strong>
+          <span class="desc">
+            Aprender a usar n8n, conectar IA com planilhas, e-mail e canais de atendimento.
+          </span>
+        </div>
+      </div>
+
+      <!-- Semana 5 -->
+      <details class="semana">
+        <summary>
+          <div class="summary-left">
+            <span class="summary-pill">SEMANA 5</span>
+            <span class="summary-title">Começando com n8n (sem IA)</span>
+          </div>
+          <span class="chevron">▶</span>
+        </summary>
+        <div class="semana-body">
+          <p class="resumo-topico">
+            Objetivo: instalar n8n / usar cloud e criar fluxos simples.
+          </p>
+
+          <div class="dia-label">📅 Dias 21–22 – Instalação e tour</div>
+          <p>Conceitos principais do n8n:</p>
+          <ul>
+            <li><strong>Nodes</strong>: blocos de ação (enviar e-mail, salvar em planilha, chamar API).</li>
+            <li><strong>Triggers</strong>: o que inicia o fluxo (webhook, horário, formulário etc.).</li>
+            <li><strong>Execução passo a passo</strong>: ver como os dados passam de node em node.</li>
+          </ul>
+
+          <h4>Fluxo 1 – Gerar texto e enviar por e-mail</h4>
+          <ol>
+            <li>Node “Manual Trigger” – você inicia o fluxo.</li>
+            <li>Node “Set” – define um texto padrão.</li>
+            <li>Node “E-mail” (Gmail/Outlook) – envia o texto para seu e-mail.</li>
+          </ol>
+
+          <h4>Fluxo 2 – Receber dados e salvar no Google Sheets</h4>
+          <ol>
+            <li>Node “Webhook” – recebe dados (nome, e-mail, interesse).</li>
+            <li>Node “Google Sheets” – adiciona uma linha com esses dados.</li>
+          </ol>
+
+          <div class="dia-label">📅 Dias 23–24 – Nodes importantes</div>
+          <ul>
+            <li><strong>HTTP Request</strong> – para chamar APIs (incluindo IA).</li>
+            <li><strong>Google Sheets</strong> – leitura e escrita em planilhas.</li>
+            <li><strong>Gmail/Outlook</strong> – envio de e-mails automáticos.</li>
+            <li><strong>Delay</strong> – esperar um tempo antes de continuar o fluxo.</li>
+            <li><strong>IF</strong> – criar condições de “se… então…”.</li>
+          </ul>
+
+          <div class="dia-label">📅 Dia 25 – Mini-projeto</div>
+          <p>
+            Criar um fluxo: você preenche uma linha na planilha com nome, e-mail e interesse → o n8n envia
+            um e-mail automático de boas-vindas.
+          </p>
+        </div>
+      </details>
+
+      <!-- Semana 6 -->
+      <details class="semana">
+        <summary>
+          <div class="summary-left">
+            <span class="summary-pill">SEMANA 6</span>
+            <span class="summary-title">Conectando IA dentro do n8n</span>
+          </div>
+          <span class="chevron">▶</span>
+        </summary>
+        <div class="semana-body">
+          <p class="resumo-topico">
+            Objetivo: fazer fluxos onde a IA entende, decide e responde.
+          </p>
+
+          <div class="dia-label">📅 Dias 26–27 – Chamando IA</div>
+          <ul>
+            <li>Usar <strong>HTTP Request</strong> para chamar API de IA (OpenAI, etc.).</li>
+            <li>Ou usar nodes específicos de IA, se disponíveis no n8n.</li>
+          </ul>
+
+          <h4>Fluxo exemplo – Salvar resposta em planilha</h4>
+          <ol>
+            <li>Webhook recebe o texto do usuário.</li>
+            <li>Node HTTP Request manda o texto para a IA.</li>
+            <li>Resposta é recebida em JSON.</li>
+            <li>Node Google Sheets grava pergunta e resposta em uma linha.</li>
+          </ol>
+
+          <div class="dia-label">📅 Dias 28–29 – Respostas automáticas</div>
+          <p>
+            Exemplo: ao receber um formulário, a IA gera uma resposta educada que é enviada por e-mail.
+          </p>
+          <ol>
+            <li>Trigger: novo formulário enviado.</li>
+            <li>n8n lê os dados do formulário.</li>
+            <li>Node IA monta uma resposta personalizada.</li>
+            <li>Node e-mail envia a resposta para o cliente.</li>
+          </ol>
+
+          <div class="dia-label">📅 Dia 30 – Mini-projeto</div>
+          <p>
+            Criar um “robô que responde dúvidas sobre um serviço”:
+          </p>
+          <ul>
+            <li>Entrada: pergunta do usuário (texto).</li>
+            <li>IA identifica intenção (dúvida, reclamação, orçamento).</li>
+            <li>IA gera resposta adequada.</li>
+            <li>Fluxo salva em planilha e envia resposta por e-mail.</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Semana 7 -->
+      <details class="semana">
+        <summary>
+          <div class="summary-left">
+            <span class="summary-pill">SEMANA 7</span>
+            <span class="summary-title">Chatbots (WhatsApp / Telegram / Site)</span>
+          </div>
+          <span class="chevron">▶</span>
+        </summary>
+        <div class="semana-body">
+          <p class="resumo-topico">
+            Objetivo: criar um chatbot real usando IA + n8n.
+          </p>
+
+          <div class="dia-label">📅 Dias 31–32 – Escolher o canal</div>
+          <ul>
+            <li>Telegram (geralmente mais simples).</li>
+            <li>Widget de chat em um site.</li>
+            <li>WhatsApp via provedores (Z-API, Gupshup etc.).</li>
+          </ul>
+
+          <div class="dia-label">📅 Dias 33–34 – Bot simples sem IA</div>
+          <ul>
+            <li>Recebe mensagem.</li>
+            <li>Responde uma frase fixa (“Olá, já recebemos sua mensagem!”).</li>
+            <li>Registra nome e telefone em uma planilha.</li>
+          </ul>
+
+          <div class="dia-label">📅 Dia 35 – Bot com IA</div>
+          <p>
+            Conectar: Canal → n8n → IA → resposta no canal.
+          </p>
+          <p>
+            Use o JSON do Mês 1 (intencao, tipo_cliente, acao_sugerida, resposta_final)
+            como formato padrão de resposta.
+          </p>
+        </div>
+      </details>
+
+      <!-- Semana 8 -->
+      <details class="semana">
+        <summary>
+          <div class="summary-left">
+            <span class="summary-pill">SEMANA 8</span>
+            <span class="summary-title">Soluções para pequenos negócios</span>
+          </div>
+          <span class="chevron">▶</span>
+        </summary>
+        <div class="semana-body">
+          <p class="resumo-topico">
+            Objetivo: montar 1 solução completa que pode ser vendida.
+          </p>
+
+          <div class="dia-label">📅 Dia 36 – Escolher um nicho</div>
+          <ul>
+            <li>Mercado / mercearia</li>
+            <li>Salão de beleza</li>
+            <li>Clínica / consultório</li>
+            <li>Loja de roupas</li>
+            <li>Restaurante</li>
+          </ul>
+
+          <div class="dia-label">📅 Dias 37–38 – Mapear problemas</div>
+          <ul>
+            <li>Como é o atendimento hoje?</li>
+            <li>Onde eles perdem tempo?</li>
+            <li>Quais perguntas são repetidas?</li>
+            <li>O que poderia ser automatizado?</li>
+          </ul>
+
+          <div class="dia-label">📅 Dias 39–40 – Montar a solução</div>
+          <ul>
+            <li>Atende o cliente no canal escolhido.</li>
+            <li>Entende o pedido com IA.</li>
+            <li>Responde dúvidas frequentes.</li>
+            <li>Registra dados em planilha (nome, telefone, interesse).</li>
+            <li>Envia resumo diário para o dono.</li>
+          </ul>
+          <p class="note">
+            Esse é seu primeiro produto pronto para oferecer a pequenos negócios.
+          </p>
+        </div>
+      </details>
+
+      <!-- =============== MÊS 3 =============== -->
+      <div class="badge-mes">
+        <span class="icon">🟨</span>
+        <div>
+          <strong>MÊS 3 — PORTFÓLIO, PRODUTOS E MERCADO</strong>
+          <span class="desc">
+            Transformar o que você criou em oferta, portfólio e venda real.
+          </span>
+        </div>
+      </div>
+
+      <!-- Semana 9 -->
+      <details class="semana">
+        <summary>
+          <div class="summary-left">
+            <span class="summary-pill">SEMANA 9</span>
+            <span class="summary-title">Automação robusta: erros, logs, condições</span>
+          </div>
+          <span class="chevron">▶</span>
+        </summary>
+        <div class="semana-body">
+          <p class="resumo-topico">
+            Objetivo: tornar seus fluxos mais confiáveis e profissionais.
+          </p>
+
+          <div class="dia-label">📅 Dias 41–42 – Tratamento de erro</div>
+          <ul>
+            <li>Verificar se a IA respondeu vazio.</li>
+            <li>Verificar se a API falhou.</li>
+            <li>Verificar se dados obrigatórios foram enviados.</li>
+          </ul>
+          <p>
+            Se algo der errado, o fluxo pode mandar um e-mail para você avisando e registrar o erro em uma linha da planilha.
+          </p>
+
+          <div class="dia-label">📅 Dias 43–44 – Logs e histórico</div>
+          <p>
+            Criar planilha/banco com:
+          </p>
+          <ul>
+            <li>Data e hora da interação.</li>
+            <li>Canal (WhatsApp, site, Telegram etc.).</li>
+            <li>Intenção (dúvida, elogio, reclamação, orçamento).</li>
+            <li>Resumo da resposta enviada.</li>
+          </ul>
+          <p class="note">
+            Esses dados são ouro para mostrar valor para o cliente (relatórios, antes/depois, indicadores).
+          </p>
+
+          <div class="dia-label">📅 Dia 45 – Mini-projeto</div>
+          <p>
+            Pegar um fluxo simples (ex.: atendimento) e transformá-lo em um fluxo robusto, com:
+          </p>
+          <ul>
+            <li>Checagem de erros.</li>
+            <li>Registro em log.</li>
+            <li>Mensagem de fallback: “Desculpe, não entendi. Pode reformular?”.</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Semana 10 -->
+      <details class="semana">
+        <summary>
+          <div class="summary-left">
+            <span class="summary-pill">SEMANA 10</span>
+            <span class="summary-title">Produto 1 – Atendente Automático</span>
+          </div>
+          <span class="chevron">▶</span>
+        </summary>
+        <div class="semana-body">
+          <p class="resumo-topico">
+            Objetivo: fechar seu primeiro produto padrão.
+          </p>
+
+          <div class="dia-label">📅 Dia 46 – Definir o produto</div>
+          <p><strong>Produto:</strong> “Atendente automático com IA para pequenos negócios”.</p>
+          <p><strong>O que inclui:</strong></p>
+          <ul>
+            <li>Atendimento 24h no canal escolhido.</li>
+            <li>FAQ inteligente para dúvidas frequentes.</li>
+            <li>Registro automático de leads (nome, contato, interesse).</li>
+            <li>Relatório diário ou semanal com resumo das interações.</li>
+          </ul>
+
+          <div class="dia-label">📅 Dias 47–48 – Documentar</div>
+          <p>Crie um documento com:</p>
+          <ul>
+            <li>O que o sistema faz (explicação simples, sem tecnicês).</li>
+            <li>Como funciona por cima (fluxo em texto ou diagrama básico).</li>
+            <li>O que o dono do negócio precisa fornecer (perguntas frequentes, regras, horários, preços etc.).</li>
+          </ul>
+
+          <div class="dia-label">📅 Dias 49–50 – Gravar demonstração</div>
+          <p>
+            Grave um vídeo curto mostrando:
+          </p>
+          <ul>
+            <li>O fluxo rodando no n8n.</li>
+            <li>Um cliente mandando mensagem.</li>
+            <li>O bot respondendo.</li>
+            <li>A planilha sendo preenchida.</li>
+          </ul>
+          <p class="note">
+            Esse vídeo já se torna parte oficial do seu portfólio.
+          </p>
+        </div>
+      </details>
+
+      <!-- Semana 11 -->
+      <details class="semana">
+        <summary>
+          <div class="summary-left">
+            <span class="summary-pill">SEMANA 11</span>
+            <span class="summary-title">Produtos 2 e 3 (relatórios, organização etc.)</span>
+          </div>
+          <span class="chevron">▶</span>
+        </summary>
+        <div class="semana-body">
+          <p class="resumo-topico">
+            Objetivo: ter mais variedade de soluções prontas.
+          </p>
+
+          <div class="dia-label">📅 Ideias de produtos</div>
+          <ul>
+            <li>
+              <strong>Robô de relatórios diários:</strong> puxa dados da planilha, pede para IA resumir em linguagem
+              simples e envia por WhatsApp ou e-mail.
+            </li>
+            <li>
+              <strong>Organizador de clientes:</strong> bot que conversa com o cliente, guarda dados em planilha/CRM
+              e usa IA para gerar um mini resumo do perfil.
+            </li>
+            <li>
+              <strong>Gerador de respostas profissionais:</strong> IA que responde reclamações, elogios e cria respostas
+              para Google Meu Negócio, Instagram etc.
+            </li>
+          </ul>
+
+          <div class="dia-label">📅 Dias 51–53 – Construir 1 ou 2 sistemas</div>
+          <p>Não precisam ser complexos, mas devem funcionar de ponta a ponta:</p>
+          <ul>
+            <li>Entrada do cliente.</li>
+            <li>Processamento com IA.</li>
+            <li>Saída (resposta + registro em planilha/CRM).</li>
+          </ul>
+
+          <div class="dia-label">📅 Dias 54–55 – Ajustar e documentar</div>
+          <p>
+            Teste com casos reais, melhore textos, ajuste prompts e registre tudo em documentos com prints e
+            descrições simples de cada fluxo.
+          </p>
+        </div>
+      </details>
+
+      <!-- Semana 12 -->
+      <details class="semana">
+        <summary>
+          <div class="summary-left">
+            <span class="summary-pill">SEMANA 12</span>
+            <span class="summary-title">Portfólio + Oferta comercial</span>
+          </div>
+          <span class="chevron">▶</span>
+        </summary>
+        <div class="semana-body">
+          <p class="resumo-topico">
+            Objetivo: organizar tudo para apresentar e vender.
+          </p>
+
+          <div class="dia-label">📅 Dias 56–57 – Portfólio</div>
+          <p>Use Notion, Canva ou site simples para montar:</p>
+          <ul>
+            <li>Seu nome + frase de posição:
+              <em>“Engenheiro de Prompt e Automação Inteligente para Pequenos Negócios”</em>.
+            </li>
+            <li>Lista de soluções:
+              <em>Atendente automático, Robô de relatórios, Organizador de clientes</em>.
+            </li>
+            <li>Vídeos/gifs de demonstração dos fluxos.</li>
+            <li>Prints de telas do n8n, planilhas e conversas.</li>
+          </ul>
+
+          <div class="dia-label">📅 Dia 58 – Lista de preços</div>
+          <ul>
+            <li><strong>Plano Básico:</strong> atendente simples, sem relatórios.</li>
+            <li><strong>Plano Intermediário:</strong> atendente + registro em planilha.</li>
+            <li><strong>Plano Premium:</strong> atendente + registro + relatórios automáticos.</li>
+          </ul>
+
+          <div class="dia-label">📅 Dias 59–60 – Abordagem de clientes</div>
+          <p>Mensagem modelo:</p>
+          <pre>Oi, tudo bem?
+Trabalho com automação inteligente usando IA e ajudo pequenos negócios
+a automatizar atendimento e relatórios.
+
+Posso te mostrar em 5 minutos como um atendente automático no WhatsApp
+ou Telegram pode reduzir mensagens repetidas e organizar seus clientes?</pre>
+
+          <p>
+            Use essa mensagem com amigos empreendedores, donos de mercados, salões, clínicas,
+            restaurantes e lojas locais.
+          </p>
+        </div>
+      </details>
+    </div>
+  </div>
+</body>
+</html>
