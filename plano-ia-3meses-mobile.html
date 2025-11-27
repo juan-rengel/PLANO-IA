@@ -7,18 +7,18 @@
 
   <style>
     :root {
-      --bg-body: #020617;
-      --bg-card: #020617;
-      --bg-card-soft: #02091f;
+      --bg-body: #070e29;
+      --bg-card: #010a30;
+      --bg-card-soft: #07133b;
       --accent: #6262f3;
       --accent-soft: rgba(53, 55, 179, 0.692);
       --accent-strong: #cdccd6;
       --text-main: #e5e7eb;
       --text-soft: #9ca3af;
-      --border-soft: #1f2937;
+      --border-soft: #182231;
       --radius-lg: 18px;
       --radius-md: 12px;
-      --shadow-soft: 0 18px 45px rgba(15,23,42,0.88);
+      --shadow-soft: 0 18px 45px rgba(13, 23, 48, 0.88);
     }
 
     * {
@@ -40,10 +40,7 @@
     }
 
     .container {
-      background:
-        radial-gradient(circle at top left, rgba(96, 165, 250, 0.26), transparent 45%),
-        radial-gradient(circle at bottom right, rgba(129,140,248,0.22), transparent 55%),
-        var(--bg-card);
+      
       border-radius: var(--radius-lg);
       padding: 18px 14px 22px;
       box-shadow: var(--shadow-soft);
@@ -53,7 +50,7 @@
     header {
       margin-bottom: 18px;
       padding-bottom: 10px;
-      border-bottom: 1px solid rgba(148,163,184,0.35);
+      border-bottom: 1px solid rgba(1, 51, 121, 0.801);
     }
 
     h1 {
@@ -78,7 +75,7 @@
       gap: 8px;
       padding: 6px 12px;
       border-radius: 999px;
-      background: rgba(15, 23, 42, 0.836);
+      background: rgba(19, 87, 151, 0.836);
       border: 1px solid rgba(148, 163, 184, 0.589);
       font-size: 0.72rem;
       text-transform: uppercase;
@@ -109,7 +106,7 @@
       padding: 4px 8px;
       border-radius: 999px;
       border: 1px solid rgba(148,163,184,0.45);
-      background: rgba(15,23,42,0.9);
+      background: rgba(14, 23, 44, 0.9);
       font-size: 0.72rem;
       display: inline-flex;
       align-items: center;
@@ -128,7 +125,7 @@
       padding: 9px 11px;
       border-radius: 999px;
       border: 1px solid rgba(148,163,184,0.45);
-      background: rgba(15,23,42,0.92);
+      background: rgb(3, 76, 124);
       font-size: 0.8rem;
       margin: 12px 0 6px;
     }
@@ -163,31 +160,34 @@
       border-radius: var(--radius-md);
       margin: 8px 0 10px;
       border: 1px solid var(--border-soft);
-      background: rgba(15,23,42,0.96);
+      background-color: #020617;
       overflow: hidden;
-      transition: border-color 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+      
     }
 
     details.semana summary {
       list-style: none;
       cursor: pointer;
-      padding: 13px 12px;
+      padding: 13px 18px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      font-size: 0.98rem;
+      font-size: 1rem;
       font-weight: 500;
-      background: linear-gradient(90deg, rgba(15,23,42,1), rgba(55,65,81,0.55));
+      background-color: #070e29;
       -webkit-tap-highlight-color: transparent;
+    
     }
 
     details.semana[open] {
       border-color: rgba(129,140,248,0.9);
       box-shadow: 0 0 0 1px rgba(129,140,248,0.4);
+     
     }
 
     details.semana[open] summary {
       background: linear-gradient(90deg, rgba(129,140,248,0.32), rgba(56,189,248,0.14));
+      
     }
 
     details.semana summary::-webkit-details-marker {
@@ -204,7 +204,7 @@
     .summary-pill {
       font-size: 0.7rem;
       text-transform: uppercase;
-      letter-spacing: .16em;
+      letter-spacing: .20em;
       padding: 3px 7px;
       border-radius: 999px;
       border: 1px solid rgba(148,163,184,0.7);
@@ -232,15 +232,13 @@
     .semana-body {
       padding: 10px 11px 12px;
       font-size: 0.9rem;
-      background:
-        radial-gradient(circle at top left, rgba(4, 1, 63, 0.603), transparent 55%),
-        rgba(15,23,42,0.98);
+      
     }
 
     .semana-body h4 {
       margin: 6px 0 3px;
       font-size: 1rem;
-      color: #e5e7eb;
+      color: #ffffff;
     }
 
     .semana-body p {
@@ -257,7 +255,7 @@
     }
 
     .semana-body li {
-      margin-bottom: 3px;
+      margin-bottom: 8px;
     }
 
     .dia-label {
